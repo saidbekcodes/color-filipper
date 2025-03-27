@@ -10,8 +10,8 @@ function setBackgroundColor(color) {
 
 generateColorBtn.addEventListener("click", () => {
   if (inputColor.value.trim() === "") {
-    showAlert("Please enter a valid color code!")
-    return
+    showAlert("Please enter a valid color code!");
+    return;
   } else {
     setBackgroundColor(inputColor.value);
   }
@@ -27,11 +27,11 @@ copyColor.addEventListener("click", () => {
   navigator.clipboard
     .writeText(inputColor.value)
     .then(() => {
-      if (inputColor.value.trim() === '') {
-        showAlert("Please enter a color before copying!")
-        return
+      if (inputColor.value.trim() === "") {
+        showAlert("Please enter a color before copying!");
+        return;
       } else {
-        showAlert(`Color copied: ${inputColor.value}`, "success")
+        showAlert(`Color copied: ${inputColor.value}`, "success");
       }
     })
     .catch((err) => showAlert("Failed to copy: " + err));
@@ -44,7 +44,7 @@ function generateRandomColor() {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-function showAlert(message, type = 'danger') {
+function showAlert(message, type = "danger") {
   alertBox.innerHTML = message;
   alertBox.className = `alert alert-${type} py-2 position-absolute w-75 text-center mt-2 top-0 start-50 translate-middle-x`;
   setTimeout(() => {
